@@ -14,6 +14,7 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers/index'
 import { Provider } from 'react-redux';
+import { Router } from 'react-router-dom'
 
 
 //THE APPLY MIDDLEWARE ARGUMENT IS HOW ASYNC ACTIONS ARE ENABLED
