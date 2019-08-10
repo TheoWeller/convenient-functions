@@ -1,0 +1,29 @@
+/* RESPONSIVE GRID */
+/* SOURCE: https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/ */
+
+.breweries > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 1rem;
+}
+
+/*
+The auto-fit keyword allows us to wrap our columns into rows when there's not enough space in
+our viewport to fit the 240px minimum value without overflowing the content. Sara Soueidan wrote
+an excellent article about auto-sizing columns using the auto-fill and auto-fit keywords, in case
+you want to dive a little deeper into what's going on under the hood. Now, with that last bit of
+code in place, we should be able to achieve this result:
+*/
+
+/*
+The minmax() function
+Now, the above examples are explicitly defining sizes for the tracks (1fr and 300px). That might work
+for some scenarios, but for our beer example here, we need to be able to automatically calculate the size
+of the track, based on the width of the viewport, and automatically adjust the number of columns shown. To
+be able to do that, we'll define a range of values using the minmax() function. What will we be defining?
+You've probably guessed by now: The *minimum* and *maximum* values we want these columns to be able to resize to.
+
+In the hero for our beer example above, we set our minmax() property to be 240px at its minimum size, and 1fr at
+its maximum size. fr units, if you've never heard of them, stand for fractional units. Nobody can explain them better
+than Jen Simmons on this video and Robin Rendle in this post.
+*/
