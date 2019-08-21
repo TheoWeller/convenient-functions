@@ -60,6 +60,18 @@ Output :  1 2 3 4
 
 Given an input of string connected with underscore like 'THIS_IS_A_TEST', transfer it to a human readable string, should remove the underscore, and capitalize the first letter of every world. 
 eg: 'THIS_IS_A_TEST' ==> 'This Is A Test'
+======================= SOLUTION ===========================
+const humanReadable = input => {
+let array = input.split("");
+return array.includes("_") ? humanReadable(removeUnderScores(array)) : array.join("")
+}
+
+const removeUnderScores = (array) => {
+  const index = array.indexOf("_")
+  array[index] = " ";
+  return array.join("");
+}
+======================= SOLUTION ===========================
 
 Balanced Curly brackets problem.
 Input - {{{}}}} output - false.
@@ -70,7 +82,7 @@ In given string array find longest prefix
 Input - ['transaction','transclude','Transfer'] - output – trans
 
 
-Given a large string of words and any two given words, write a program to find the smallest number of words to traverse from the first word to reach the second word in the given string (in either direction).  For     	example, from one word to the adjacent word in the string, you traverse one (1) word. Assume the words are case sensitive.
+Given a large string of words and any two given words, write a program to find the smallest number of words to traverse from the first word to reach the second word in the given string (in either direction).  For example, from one word to the adjacent word in the string, you traverse one (1) word. Assume the words are case sensitive.
 Example input :
 sentence : The quick brown fox jumps over the lazy
 1st word : quick
